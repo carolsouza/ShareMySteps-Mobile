@@ -2,12 +2,16 @@ import styled from 'styled-components/native';
 
 interface ImageProps{
     imgTop: string;
-    imgLeft: string;
+    imgRight: string;
 }
+
+export const LogoContainer = styled.View`
+    position: relative;
+    width: 80%;
+`;
 
 export const LoginLogoTitle = styled.Text `
     color: #FFFFFF;
-    width: 80%;
     font-size: 50px;
     font-weight: bold;
     text-align: right;
@@ -18,6 +22,6 @@ export const LoginLogoTitle = styled.Text `
 export const LoginLogoImg = styled.Image<ImageProps>`
     position: absolute;
     top: ${(props) => props.imgTop || '0px'};
-    left: ${(props) => props.imgLeft || '0px'};
+    right: ${(props) => props.imgRight || '0px'};
 `;
 

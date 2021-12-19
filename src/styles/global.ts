@@ -29,28 +29,3 @@ export const ContentInput = styled.TextInput`
   border-radius: 5px;
   margin-top: 30px;
 `;
-
-export const LogoArea = styled.View`
-  width: 100%;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-`;
-
-export const LogoTitle = styled.Text`
-  color: #ffffff;
-  width: 80%;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: right;
-  position: relative;
-  line-height: 25px;
-`;
-
-export const LogoImage = styled.Image<LogoProps>`
-  position: absolute;
-  top: ${(props) => props.imgTop || "0px"};
-  right: ${(props) => props.imgRight || "0px"};
-  height: 20px;
-  width: 40px;
-`;

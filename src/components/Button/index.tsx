@@ -17,7 +17,7 @@ export const BtnComponent: React.FC<ButtonProps> = ({
   btnColor,
   txtDecoration,
   fontSize
-}: ButtonProps) => {
+}) => {
   return (
     <ButtonComponent onPress={onPress} backgroundcolor={btnColor}>
       <ButtonText txtDecoration={txtDecoration} fontSize={fontSize}>{btnText}</ButtonText>
