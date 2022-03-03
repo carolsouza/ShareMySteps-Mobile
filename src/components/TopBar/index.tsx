@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigation } from '@react-navigation/native';
+import { CommonActions, useNavigation } from '@react-navigation/native';
 
 import {
   TopContainer,
@@ -7,7 +7,7 @@ import {
   LogoTitle,
   LogoImage,
   OptionButton,
-  OptionImage
+  OptionImage,
 } from "./styles";
 
 import Steps from "../../assets/steps.png";
@@ -18,29 +18,29 @@ interface TopBarProps {
   topButton: string;
 }
 
-export const TopBar: React.FC<TopBarProps> = ({ topButton }) => {
-    const { navigate } = useNavigation<any>();
-    
-    function handleBackButton() {
-        navigate.goBack();
-    }
 
-    function handleSettingsButton() {
-        navigate('Settings');
-    }
+export function TopBar  ({ topButton }: TopBarProps ){
+  const { navigate, goBack } = useNavigation<any>();
+
+  function handleBackButton() {
+    goBack();
+  }
+
+  function handleSettingsButton() {
+    navigate("Settings");
+  }
 
   return (
     <TopContainer>
-        {topButton === "settings" || topButton === "account"
-          ? 
-            <OptionButton onPress={handleBackButton}>
-                <OptionImage source={Back}></OptionImage>
-            </OptionButton>
-          : 
-            <OptionButton onPress={handleSettingsButton}> 
-                <OptionImage source={Setting}></OptionImage>
-            </OptionButton>
-        }
+      {topButton === "settings" || topButton === "account" ? (
+        <OptionButton onPress={handleBackButton}>
+          <OptionImage source={Back}></OptionImage>
+        </OptionButton>
+      ) : (
+        <OptionButton onPress={handleSettingsButton}>
+          <OptionImage source={Setting}></OptionImage>
+        </OptionButton>
+      )}
       <LogoArea>
         <LogoTitle>SHARE MY</LogoTitle>
         <LogoTitle>STEPS</LogoTitle>
