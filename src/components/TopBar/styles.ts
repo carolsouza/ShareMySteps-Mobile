@@ -39,11 +39,14 @@ export const LogoImage = styled.Image`
 
 export const OptionButton = styled.TouchableOpacity`
     height:100%;
+    width: 80px;
     justify-content: center;
+    z-index: 1;
 `;
 
 export const OptionImage = styled.ImageBackground`
     width: 25px;
     height: 25px; 
     margin-left: 20px;
+    z-index: 0;
 `;

@@ -21,21 +21,17 @@ export default function Login() {
     senha: "",
   });
 
-  const [teste, setTeste] = useState("");
-
   async function handleLogin() {
-    // navigate('Home')
 
-    console.log(user)
-
-    await api.post("/auth", {
-      email: user.email,
-      pass: user.senha
-    })
-    .catch(function (error) {
-
-      console.log(JSON.stringify(error))
-    });
+    await api
+      .post("/auth", {
+        email: user.email,
+        pass: user.senha,
+      })
+      .then(() => navigate("Home"))
+      .catch(function (error) {
+        console.log(JSON.stringify(error));
+      });
   }
 
   function handleCreateAccount() {

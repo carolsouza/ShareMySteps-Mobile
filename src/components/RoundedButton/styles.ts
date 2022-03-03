@@ -10,9 +10,11 @@ export const VideoButton = styled.TouchableOpacity`
     right: 10px;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 `;
 
 export const ChatIcon = styled.ImageBackground`
     width: 40px;
     height: 40px;
+    
 `;
